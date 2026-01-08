@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>박지은 - AI 연구자 포트폴리오</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            color: #333;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            padding: 80px 60px;
+            border-radius: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInDown 0.8s ease;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-size: 3.5em;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .subtitle {
+            font-size: 1.4em;
+            color: #666;
+            margin-bottom: 30px;
+            font-weight: 300;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-info a {
+            color: #667eea;
+            text-decoration: none;
+            transition: all 0.3s;
+            padding: 12px 24px;
+            border-radius: 25px;
+            background: rgba(102, 126, 234, 0.1);
+            font-weight: 500;
+        }
+
+        .contact-info a:hover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 50px;
+            border-radius: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: fadeInUp 0.8s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+            transform: scaleY(0);
+            transform-origin: top;
+            transition: transform 0.4s ease;
+        }
+
+        .section:hover::before {
+            transform: scaleY(1);
+        }
+
+        .section:hover {
+            transform: translateX(10px);
+            box-shadow: 0 15px 50px rgba(102, 126, 234, 0.2);
+        }
+
+        h2 {
+            color: #667eea;
+            font-size: 2.2em;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid transparent;
+            border-image: linear-gradient(90deg, #667eea 0%, #764ba2 50%, transparent 100%);
+            border-image-slice: 1;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .research-card, .project-card, .publication-card {
+            background: linear-gradient(135deg, #f8f9ff 0%, #fff 100%);
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 25px;
+            border-left: 5px solid #667eea;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .research-card::after, .project-card::after, .publication-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 0;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.05));
+            transition: width 0.4s ease;
+        }
+
+        .research-card:hover::after, .project-card:hover::after, .publication-card:hover::after {
+            width: 100%;
+        }
+
+        .research-card:hover, .project-card:hover, .publication-card:hover {
+            background: linear-gradient(135deg, #fff 0%, #f8f9ff 100%);
+            border-left-width: 8px;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.15);
+        }
+
+        .card-title {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 12px;
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+        }
+
+        .card-meta {
+            color: #888;
+            font-size: 0.95em;
+            margin-bottom: 18px;
+            font-weight: 400;
+            position: relative;
+            z-index: 1;
+        }
+
+        .card-meta::before {
+            content: '';
+        }
+
+        .research-card p, .project-card p, .publication-card p {
+            position: relative;
+            z-index: 1;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .skill-category {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 35px;
+            border-radius: 20px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-category::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .skill-category:hover::before {
+            opacity: 1;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.4);
+        }
+
+        .skill-category h3 {
+            margin-bottom: 20px;
+            font-size: 1.3em;
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+        }
+
+        .skill-category ul {
+            list-style: none;
+            position: relative;
+            z-index: 1;
+        }
+
+        .skill-category li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .skill-category li:hover {
+            transform: translateX(5px);
+        }
+
+        .skill-category li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            font-size: 1.2em;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .education-item {
+            padding: 25px;
+            margin-bottom: 20px;
+            border-left: 4px solid #764ba2;
+            background: linear-gradient(90deg, rgba(118, 75, 162, 0.05) 0%, transparent 100%);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .education-item:hover {
+            border-left-width: 8px;
+            transform: translateX(10px);
+            background: linear-gradient(90deg, rgba(118, 75, 162, 0.1) 0%, transparent 100%);
+        }
+
+        .education-item h3 {
+            color: #333;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 1.2em;
+        }
+
+        .tag {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 18px;
+            border-radius: 25px;
+            font-size: 0.85em;
+            margin-right: 10px;
+            margin-top: 12px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .tag:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .top-tier-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.65em;
+            font-weight: 700;
+            margin-left: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            box-shadow: 0 3px 12px rgba(255, 107, 107, 0.4);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+            }
+            50% {
+                box-shadow: 0 4px 25px rgba(255, 107, 107, 0.6);
+            }
+        }
+
+        /* 프로젝트 성과 수치 스타일 */
+        .project-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+            padding: 20px;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+            border-radius: 15px;
+        }
+
+        .metric-item {
+            text-align: center;
+            padding: 15px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .metric-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.15);
+        }
+
+        .metric-value {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+
+        .metric-label {
+            font-size: 0.9em;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .project-highlight {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            padding: 15px 20px;
+            border-radius: 12px;
+            margin: 15px 0;
+            border-left: 4px solid #667eea;
+        }
+
+        .project-highlight strong {
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .project-highlight ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .project-highlight li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .project-highlight li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        /* About me 섹션 스타일 */
+        .about-me-container {
+            display: grid;
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .about-me-intro {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.08) 0%, rgba(118, 75, 162, 0.08) 100%);
+            padding: 30px;
+            border-radius: 20px;
+            border-left: 5px solid #667eea;
+            font-size: 1.1em;
+            line-height: 1.9;
+            margin-bottom: 20px;
+        }
+
+        .about-me-highlight {
+            background: linear-gradient(135deg, #fff 0%, #f8f9ff 100%);
+            padding: 25px 30px;
+            border-radius: 15px;
+            margin-bottom: 15px;
+            border-left: 4px solid #764ba2;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .about-me-highlight::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+            transform: scaleY(0);
+            transform-origin: top;
+            transition: transform 0.3s ease;
+        }
+
+        .about-me-highlight:hover::before {
+            transform: scaleY(1);
+        }
+
+        .about-me-highlight:hover {
+            transform: translateX(8px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+            border-left-width: 6px;
+        }
+
+        .about-me-highlight strong {
+            color: #667eea;
+            font-weight: 600;
+            font-size: 1.05em;
+        }
+
+        .about-me-summary {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            padding: 30px;
+            border-radius: 20px;
+            border: 2px solid rgba(102, 126, 234, 0.2);
+            font-size: 1.05em;
+            line-height: 1.9;
+            margin-top: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-me-summary::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
+            animation: rotate 15s linear infinite;
+        }
+
+        .about-me-summary p {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Key Strengths 섹션 스타일 */
+        .strengths-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .strength-card {
+            background: linear-gradient(135deg, #fff 0%, #f8f9ff 100%);
+            padding: 25px 30px;
+            border-radius: 18px;
+            border: 2px solid transparent;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .strength-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .strength-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .strength-card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(102, 126, 234, 0.08) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .strength-card:hover::after {
+            opacity: 1;
+        }
+
+        .strength-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.2);
+            border-color: rgba(102, 126, 234, 0.3);
+        }
+
+        .strength-icon {
+            font-size: 2em;
+            margin-bottom: 15px;
+            display: block;
+            position: relative;
+            z-index: 1;
+        }
+
+        .strength-text {
+            font-size: 1.05em;
+            line-height: 1.7;
+            color: #444;
+            position: relative;
+            z-index: 1;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2em;
+            }
+
+            header {
+                padding: 50px 30px;
+            }
+
+            .section {
+                padding: 30px;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            h2 {
+                font-size: 1.8em;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .strengths-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-me-highlight {
+                padding: 20px;
+            }
+
+            .project-metrics {
+                grid-template-columns: 1fr;
+            }
+
+            .metric-value {
+                font-size: 1.5em;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>박지은</h1>
+            <p class="subtitle">AI 연구자 | Machine Learning Engineer</p>
+            <div class="contact-info">
+                <a href="mailto:jieun.park@research.ai">✉ Email</a>
+                <a href="https://velog.io/@jieun9851" target="_blank">📝 기술블로그</a>
+                <a href="https://github.com/jieun9851" target="_blank">💻 GitHub</a>
+                <a href="https://scholar.google.com/citations?user=m6lNEksAAAAJ&hl=ko" target="_blank">📚 Google Scholar</a>
+                <a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile" target="_blank">🔗 LinkedIn</a>
+            </div>
+        </header>
+
+        <div class="section">
+            <h2>🚀 Research Overview</h2>
+            <div class="about-me-container">
+                <div class="about-me-intro">
+                    <p>최신 LLM(Reasoning Model)의 추론 능력을 교육 도메인에 이식하고, <strong>복합 에이전트(Multi-Agent)</strong> 구조를 통해 대규모 교육 콘텐츠 생성 및 튜터링 시스템의 성능을 정량적으로 개선하는 데 집중하고 있습니다. 수학 교육 도메인을 중심으로 <strong>대화형 튜터링, 추론, 콘텐츠 생성, Agent 시스템</strong>을 연구·개발하고 있으며, 논문 연구부터 대규모 API/DB/서비스 배포까지 전 과정을 경험했습니다.</p>
+                </div>
+
+                <div class="about-me-summary">
+                    <p>4년 이상의 LLM 개발 및 최적화 경험을 보유한 리서치 중심의 NLP 엔지니어입니다. <strong>DeepSeek R1 기반 추론 모델 증류(Distillation)</strong>, <strong>멀티 에이전트 오케스트레이션</strong>, <strong>프로덕션급 RAG 시스템</strong> 설계에 전문성을 보유하고 있습니다. ACL, EMNLP 등 세계 최고 권위의 AI 학회 논문 투고 경험과 더불어, 대규모 트래픽을 처리하는 EdTech AI 서비스의 성공적인 배포를 주도했습니다.</p>
+                </div>
+            </div>
+
+            <h3 style="color: #667eea; font-size: 1.3em; margin-top: 40px; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid rgba(102, 126, 234, 0.2);">Key Strengths</h3>
+            <div class="strengths-grid">
+                <div class="strength-card">
+                    <span class="strength-icon">🔬</span>
+                    <p class="strength-text">논문 연구 + 실서비스를 동시에 경험한 NLP 연구원</p>
+                </div>
+                <div class="strength-card">
+                    <span class="strength-icon">📐</span>
+                    <p class="strength-text">수학 추론·튜터링이라는 고난도 도메인 특화</p>
+                </div>
+                <div class="strength-card">
+                    <span class="strength-icon">🤖</span>
+                    <p class="strength-text">Agent, Alignment, Error Detection 등 연구 난이도 높은 주제 실증</p>
+                </div>
+                <div class="strength-card">
+                    <span class="strength-icon">📊</span>
+                    <p class="strength-text">모델 성능 비교·분석 문서화 경험 풍부</p>
+                </div>
+                <div class="strength-card">
+                    <span class="strength-icon">🚀</span>
+                    <p class="strength-text">API/DB/배포까지 가능한 End-to-End 역량</p>
+                </div>
+            </div>
+
+            <h3 style="color: #667eea; font-size: 1.3em; margin-top: 40px; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid rgba(102, 126, 234, 0.2);">연구 관심분야</h3>
+            <div class="research-card">
+                <div class="card-title">Large Language Models (LLMs)</div>
+                <p>최신 LLM 아키텍처, 최적화 기법 및 모델 정렬(DPO/PPO) 연구</p>
+            </div>
+            <div class="research-card">
+                <div class="card-title">Multi-Agent LLM Systems</div>
+                <p>다중 에이전트 LLM 시스템 설계, 오케스트레이션 및 최적화</p>
+            </div>
+            <div class="research-card">
+                <div class="card-title">Mathematical Reasoning & Educational AI</div>
+                <p>수학적 추론, 튜터링 시스템, 학생 풀이 정렬 및 오류 탐지, 교육용 NLP/AI 튜터 개발</p>
+            </div>
+            <div class="research-card">
+                <div class="card-title">Data-centric AI</div>
+                <p>데이터 생성, 검수, 품질 평가 체계 구축 및 데이터 중심 AI 연구</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🛠 Technical Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>LLM Research & Engineering</h3>
+                    <ul>
+                        <li>Reasoning Models: DeepSeek R1 (Distillation), GPT-4.5/o3, Gemini 2.0</li>
+                        <li>Techniques: SFT, DPO, ORPO, RAG, Chain-of-Thought (CoT)</li>
+                        <li>Agentic Workflow & Multi-Agent Systems</li>
+                        <li>Thinking Budget 기반 성능 실험</li>
+                        <li>Model Load 구조 개선</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Frameworks & Infrastructure</h3>
+                    <ul>
+                        <li>NLP/ML: PyTorch, HuggingFace, LangChain, Guardrails</li>
+                        <li>Backend/DB: FastAPI, MongoDB, PostgreSQL, Qdrant (Vector DB)</li>
+                        <li>Tools: OCR (Mistral), LaTeX Parser, JSON Schema Validation</li>
+                        <li>API 암호화 및 부하 테스트</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Optimization & Performance</h3>
+                    <ul>
+                        <li>비동기 처리 및 Batch API 최적화</li>
+                        <li>Flash-lite 모델 활용</li>
+                        <li>Vector DB 마이그레이션 및 인덱싱</li>
+                        <li>Docker 기반 배포 자동화</li>
+                        <li>Redis 캐싱 전략</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Evaluation & Benchmarking</h3>
+                    <ul>
+                        <li>수리 추론(MATH, GSM8K) 벤치마킹</li>
+                        <li>HumanEval, MBPP 코드 생성 평가</li>
+                        <li>Human-in-the-loop (HITL) 평가 체계</li>
+                        <li>Pass@1, F1-Score 등 정량적 성능 측정</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🏃‍♂️ Career</h2>
+            <div class="project-card">
+                <div class="card-title">TutorusLabs</div>
+                <div class="card-meta">Leader | 2023.03. ~ 현재</div>
+                <p>
+                    <strong>Chatbot 및 MultiModal model 개발</strong><br>
+                    <strong>수학 튜터링 챗봇 제작</strong><br>
+                    <strong>디지털 교과서 - AI 모델 제작</strong><br>
+                    <strong>국책 과제 및 용역</strong><br>
+                    <strong>NLP 논문 작성</strong>
+                </p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>주요 논문</h2>
+            
+            <h3 style="color: #667eea; font-size: 1.5em; margin-top: 30px; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid rgba(102, 126, 234, 0.2);">International Conferences</h3>
+            
+            <div class="publication-card" style="border-left: 6px solid #ff6b6b; position: relative;">
+                <div class="card-title">Beyond Accuracy: Alignment and Error Detection across Languages in the Bi-GSM8K Math-Teaching Benchmark</div>
+                <div class="card-meta"><strong>Jieun Park</strong>, KyungTae Lim, Joon-Ho Lim | The 19th Conference of the European Chapter of the Association for Computational Linguistics (EACL 2026), Findings, 2026</div>
+                <p>다국어 수학 튜터링 벤치마크(Bi-GSM8K)에서 정확도뿐만 아니라 정렬(Alignment)과 오류 탐지 성능을 평가하는 새로운 평가 프레임워크를 제안했습니다.</p>
+                <span class="tag">Mathematical Reasoning</span>
+                <span class="tag">Error Detection</span>
+                <span class="tag">Alignment</span>
+                <span class="tag">EACL 2026</span>
+                <span class="tag" style="background:#ff6b6b; color:#fff; font-weight:bold; margin-left:5px;">Top-Tier</span>
+                
+            </div>
+            
+            <div class="publication-card">
+                <div class="card-title">What Is the True Performance of Large Multimodal Models in Visual Context-Based Mathematical Reasoning? An Analysis of Multiple Datasets and Future Research Directions</div>
+                <div class="card-meta"><strong>Park, Ji-Eun</strong>, Park, Sung-Eun, et al. | 2024 15th International Conference on Information and Communication Technology Convergence (ICTC), IEEE, 2024</div>
+                <p>시각적 맥락 기반 수학적 추론에서 대규모 멀티모달 모델의 실제 성능을 분석하고, 향후 연구 방향을 제시했습니다.</p>
+                <span class="tag">Multimodal Models</span>
+                <span class="tag">Mathematical Reasoning</span>
+                <span class="tag">ICTC 2024</span>
+            </div>
+            
+            <div class="publication-card">
+                <div class="card-title">Controlling Weight Update Probability of Sparse Features in Machine Learning</div>
+                <div class="card-meta">Shin, J., Kim, W., Lee, J., <strong>Park, J.</strong>, & Ock, C. Y. | 2022 14th International Conference on Knowledge and Systems Engineering (KSE), IEEE, 2022</div>
+                <p>머신러닝에서 희소 특징의 가중치 업데이트 확률을 제어하는 방법을 제안하여 모델 학습 효율을 개선했습니다.</p>
+                <span class="tag">Machine Learning</span>
+                <span class="tag">Optimization</span>
+                <span class="tag">KSE 2022</span>
+            </div>
+
+            <h3 style="color: #667eea; font-size: 1.5em; margin-top: 40px; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid rgba(102, 126, 234, 0.2);">Domestic Conferences</h3>
+            
+            <div class="publication-card">
+                <div class="card-title">Korean Multimodal Reasoning and Tutoring Dialogue Benchmark for AI Complex Reasoning</div>
+                <div class="card-meta">Ji-Young Yoon, DongJae Shin, <strong>Jieun Park</strong>, Sungeun Park, Jong-hun Shin, Oh-Woog Kwon, Hyungbae Jeon | 한국인공지능학회 2025 추계학술대회, 2025</div>
+                <p>한국어 멀티모달 추론 및 튜터링 대화를 위한 벤치마크 데이터셋을 제안하여 AI 복합 추론 능력 평가 기준을 제시했습니다.</p>
+                <span class="tag">Multimodal AI</span>
+                <span class="tag">Benchmark</span>
+                <span class="tag">Educational AI</span>
+            </div>
+            
+            <div class="publication-card">
+                <div class="card-title">A Model for Extraction of Sentiment Expression Areas Using Sentiment domain and Multi-Task Learning</div>
+                <div class="card-meta"><strong>Park, Ji-Eun</strong>, Ju-Sang Lee, Cheol-Young Ock | 한국정보과학회 학술발표논문집, pp.434-436, 2022</div>
+                <p>감정 도메인과 멀티태스크 학습을 활용하여 감정 표현 영역 추출 모델을 제안했습니다.</p>
+                <span class="tag">Multi-Task Learning</span>
+                <span class="tag">Sentiment Analysis</span>
+            </div>
+            
+            <div class="publication-card">
+                <div class="card-title">Extracting multiple sentiment expression areas using BERT+ CRF</div>
+                <div class="card-meta"><strong>Park, Ji-Eun</strong>, Ju-Sang Lee, Cheol-Young Ock | Annual Conference on Human and Language Technology, pp.571-575, 2021</div>
+                <p>BERT와 CRF를 결합하여 텍스트에서 다중 감정 표현 영역을 효과적으로 추출하는 모델을 개발했습니다.</p>
+                <span class="tag">BERT</span>
+                <span class="tag">CRF</span>
+                <span class="tag">Sentiment Analysis</span>
+            </div>
+
+            <h3 style="color: #667eea; font-size: 1.5em; margin-top: 40px; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid rgba(102, 126, 234, 0.2);">Domestic Journals</h3>
+            
+            <div class="publication-card">
+                <div class="card-title">A Model for Topic Classification and Extraction of Sentimental Expression using a Lexical Semantic Network</div>
+                <div class="card-meta"><strong>Park, Ji-Eun</strong>, Ju-Sang Lee, Joon-Choul Shin, Cheol-Young Ock | Journal of KIISE, Vol.50, No.8, pp.700-711, 2023</div>
+                <p>어휘의미망을 활용한 토픽 분류 및 감정 표현 추출 모델을 개발하여 자연어 이해 성능을 개선했습니다.</p>
+                <span class="tag">NLP</span>
+                <span class="tag">Sentiment Analysis</span>
+                <span class="tag">Lexical Semantic Network</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🚀 Core Research & Projects</h2>
+            
+            <div class="project-card">
+                <div class="card-title">1. 수학 튜터링 특화 추론 모델 연구: 수학 풀이 정렬 및 오류 탐지 연구</div>
+                <div class="card-meta">~~~~</div>
+                <p><strong>Goal:</strong> 학생의 오답 유형을 분석하고 단계별 풀이를 생성하는 수학 튜터링 모델 고도화</p>
+                
+                <div class="project-highlight">
+                    <p><strong>실험 내용:</strong></p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>DeepSeek R1 Distill (Qwen 7B, Llama 8B) 기반 수학 추론 파인튜닝</li>
+                        <li>학생 풀이-정답 간의 <strong>Alignment 알고리즘</strong> 연구 및 최초 오류 탐지(Step-level Error Detection) 실험</li>
+                    </ul>
+                </div>
+
+                <div class="project-metrics">
+                    <div class="metric-item">
+                        <div class="metric-value">+22%</div>
+                        <div class="metric-label">Reasoning Accuracy<br/>(Pass@1 향상)</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value">0.84</div>
+                        <div class="metric-label">Error Detection<br/>(F1-Score)</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value">-35%</div>
+                        <div class="metric-label">LaTeX Hallucination<br/>(감소)</div>
+                    </div>
+                </div>
+
+                <p style="margin-top: 15px;"><strong>성과:</strong> DeepSeek R1 Distill 적용 후, 기존 Llama-3-8B 대비 수학 문제 해결 정확도(Pass@1) <strong>22% 향상</strong>. 학생 풀이 내 오류 탐지 F1-Score <strong>0.84 달성</strong>. JSON 스키마 검증 및 프롬프트 고도화를 통해 LaTeX 렌더링 환각(Hallucination) <strong>35% 감소</strong>.</p>
+                
+                <span class="tag">DeepSeek R1</span>
+                <span class="tag">Knowledge Distillation</span>
+                <span class="tag">Error Detection</span>
+                <span class="tag">EACL 2025</span>
+            </div>
+
+            <div class="project-card">
+                <div class="card-title">2. Multi-Agent 기반 교육 시스템 아키텍처 설계</div>
+                <div class="card-meta">~~~~</div>
+                <p><strong>Goal:</strong> 단일 LLM의 환각(Hallucination)을 최소화하고 복합적인 교육 태스크를 수행하는 에이전트 시스템 구축</p>
+                
+                <div class="project-highlight">
+                    <p><strong>기술적 기여:</strong></p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>4종 에이전트(대화, 문항생성, 요약, 단원분류) 분리 및 <strong>Guardrail(주제 이탈 감지)</strong> 적용</li>
+                        <li>Flash-lite 모델 및 Batch API를 활용한 추론 비용 및 속도 최적화</li>
+                        <li>모델 로드 구조 개선을 통한 인퍼런스 파이프라인 최적화</li>
+                    </ul>
+                </div>
+
+                <div class="project-metrics">
+                    <div class="metric-item">
+                        <div class="metric-value">-45%</div>
+                        <div class="metric-label">Latency<br/>(1.2s → 0.65s)</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value">&lt;0.5%</div>
+                        <div class="metric-label">오응답률<br/>(Guardrail 효과)</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value">96.8%</div>
+                        <div class="metric-label">단원 분류<br/>정확도</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value">99.9%</div>
+                        <div class="metric-label">Uptime<br/>(가동률)</div>
+                    </div>
+                </div>
+
+                <p style="margin-top: 15px;"><strong>성과:</strong> API 비동기 처리 및 구조 최적화를 통해 평균 응답 지연 시간(TTFT) <strong>45% 단축</strong> (1.2s → 0.65s). Guardrail 도입으로 수학 외 질문에 대한 오응답률 <strong>0.5% 미만</strong>으로 억제. 하이브리드 RAG 및 미세 조정된 분류기를 통해 단원 분류 정확도 <strong>96.8% 달성</strong>. 전국 단위 AIDT 배포를 위한 부하 테스트에서 가동률 <strong>99.9% 기록</strong>.</p>
+                
+                <span class="tag">Multi-Agent</span>
+                <span class="tag">Guardrails</span>
+                <span class="tag">FastAPI</span>
+                <span class="tag">Production</span>
+            </div>
+
+            <div class="project-card">
+                <div class="card-title">3. AIDT(AI 디지털 교과서) 콘텐츠 생성 파이프라인 자동화</div>
+                <div class="card-meta">~~~~</div>
+                <p><strong>Goal:</strong> 대규모 교과 학습 데이터(HTML/PDF)에서 지식 객체를 추출하고 맞춤형 문항 생성</p>
+                
+                <div class="project-highlight">
+                    <p><strong>기술적 기여:</p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>Mistral OCR 및 GPT-4.5/o3 기반 교과서 데이터 추출 및 JSON 구조화 실험</li>
+                        <li>Self-Rewarding(풀이→검사→교정) 알고리즘 도입을 통한 데이터 품질 고도화</li>
+                        <li>GPT-4.5, o3-mini, Gemini 2.0 등 최신 모델 대상 교수법적 콘텐츠 생성 품질 벤치마킹</li>
+                    </ul>
+                </div>
+
+                <div class="project-metrics">
+                    <div class="metric-item">
+                        <div class="metric-value">130,000+</div>
+                        <div class="metric-label">생성 문항<br/>(총 규모)</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value">-50%</div>
+                        <div class="metric-label">생성 시간<br/>(6분 → 3분)</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value">-50%</div>
+                        <div class="metric-label">API 비용<br/>(절감)</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value">3.5x</div>
+                        <div class="metric-label">QPS 증가<br/>(Qdrant)</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value">15% → 2%</div>
+                        <div class="metric-label">데이터 손실률<br/>(감소)</div>
+                    </div>
+                </div>
+
+                <p style="margin-top: 15px;"><strong>성과:</strong> 총 <strong>130,000건 이상의 문항</strong>에 대한 단계별 풀이, 힌트, 질문 데이터 자동 생성 및 정제. 평가-교정 프로세스 최적화로 생성 시간 <strong>50% 단축</strong>(6분→3분) 및 API 비용 <strong>50% 절감</strong>. 커스텀 파싱 로직 개선을 통해 데이터 추출 손실률을 <strong>15%에서 2% 미만으로 절감</strong>. Qdrant 마이그레이션 및 메타데이터 인덱싱 최적화 후 초당 쿼리 처리량(QPS) <strong>3.5배 증가</strong>. GPT-4o 대비 o3/4.5 모델 비교 실험 결과, 복합 추론 문항 생성 적합도 점수(Human Eval) <strong>4.2/5.0 기록</strong>.</p>
+                
+                <span class="tag">Content Generation</span>
+                <span class="tag">Qdrant</span>
+                <span class="tag">OCR</span>
+                <span class="tag">Self-Rewarding</span>
+            </div>
+
+            <div class="project-card">
+                <div class="card-title">4. 코드 생성 및 수학 추론 성능 벤치마킹</div>
+                <div class="card-meta">2024.09 - 2024.12 | ETRI/용역 과제</div>
+                <p><strong>Goal:</strong> 최신 LLM의 코드 생성 및 수학적 추론 능력 검증 및 개선</p>
+                
+                <div class="project-highlight">
+                    <p><strong>실험 내용:</strong></p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>HumanEval, MBPP 기반 코드 생성 평가 및 Pass@1 기준 성능 측정</li>
+                        <li>Qwen2.5-Coder 및 Llama-3.1 기반 LoRA/Full Fine-tuning 수행 (최대 71시간 학습, A6000 7장 활용)</li>
+                        <li>Idefics2 모델을 활용한 이미지 기반 문제 풀이 실험</li>
+                        <li>서울대, DMTLabs 등 용역 데이터 약 <strong>8,500건</strong>의 무결성 검수 및 사이트 개발</li>
+                    </ul>
+                </div>
+
+                <div class="project-metrics">
+                    <div class="metric-item">
+                        <div class="metric-value">+198%</div>
+                        <div class="metric-label">멀티모달 성능<br/>(8.5% → 25.4%)</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value">8,500+</div>
+                        <div class="metric-label">검수 데이터<br/>(건)</div>
+                    </div>
+                </div>
+
+                <p style="margin-top: 15px;"><strong>성과:</strong> Idefics2 모델을 활용한 멀티모달 실험에서 Baseline 대비 성능 <strong>약 198% 향상</strong> (8.5% → 25.4%). SFT, LoRA, DPO, ORPO 실험 다수 수행 및 HumanEval / MBPP / GSM8K 기반 평가 프레임워크 직접 구축.</p>
+                
+                <span class="tag">Code Generation</span>
+                <span class="tag">Multimodal</span>
+                <span class="tag">DPO/ORPO</span>
+                <span class="tag">Benchmark</span>
+            </div>
+
+            <div class="project-card">
+                <div class="card-title">5. AI 기반 파이프라인 고장 진단 예측 시스템</div>
+                <div class="card-meta">2021.10 - 2021.12 | 개인 프로젝트 (참여도: 100%)</div>
+                <p><strong>Goal:</strong> 파이프라인 내 음성 신호 데이터를 이용하여 누수를 판단하고 누수 위치를 예측하는 AI 기반 고장 진단 시스템 개발</p>
+                
+                <div class="project-highlight">
+                    <p><strong>기술적 기여:</strong></p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>약 <strong>2,000여개의 대용량 음성 신호 데이터</strong>를 STFT(Short-Time Fourier Transform)로 전처리</li>
+                        <li>CNN 기반 누수 탐지 모델 개발 및 학습 최적화</li>
+                        <li>IQR 이상치 탐지 공식을 활용한 Threshold 기반 신호 분석</li>
+                        <li>K-Means 클러스터링을 통한 burst 신호 군집화 및 누수 위치 계산 알고리즘 설계</li>
+                        <li>하이브리드 접근법(지도 학습 + 비지도 학습)을 통한 정확도 향상</li>
+                    </ul>
+                </div>
+
+                <div class="project-metrics">
+                    <div class="metric-item">
+                        <div class="metric-value">96.18%</div>
+                        <div class="metric-label">누수 탐지<br/>정확률</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value">5.3%</div>
+                        <div class="metric-label">누수 위치<br/>오차율</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value">-1.3%</div>
+                        <div class="metric-label">기존 논문 대비<br/>오차율 개선</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value">2,000+</div>
+                        <div class="metric-label">처리 데이터<br/>(건)</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value">85%</div>
+                        <div class="metric-label">전처리 시간<br/>단축</div>
+                    </div>
+                </div>
+
+                <p style="margin-top: 15px;"><strong>성과:</strong> 평균 정확률 <strong>96.18%</strong>인 누수 탐지 모델을 제작하여 파이프라인 내 누수를 효과적으로 식별했습니다. 누수 위치 예측 모델은 오차율 <strong>5.3%</strong>를 달성하여 기존 논문에서 제안하는 모델의 오차율보다 <strong>1.3% 더 낮은</strong> 성능을 기록했습니다. STFT 기반 전처리 파이프라인 최적화를 통해 데이터 처리 시간을 <strong>85% 단축</strong>했으며, K-Means 클러스터링을 활용한 하이브리드 접근법으로 신호 분석 정확도를 향상시켰습니다.</p>
+                
+                <span class="tag">CNN</span>
+                <span class="tag">Signal Processing</span>
+                <span class="tag">K-Means</span>
+                <span class="tag">STFT</span>
+                <span class="tag">Anomaly Detection</span>
+            </div>
+
+            <div class="project-card">
+                <div class="card-title">6. 문맥 정보와 어휘의미망을 결합한 자연어 개념 표상 모델 개발</div>
+                <div class="card-meta">2021.03 - 2023.02 | 한국연구재단(교육부) | 연구보조원 (참여도: 20%)</div>
+                <p><strong>Goal:</strong> 문맥 정보와 어휘 의미망을 결합한 자연어 개념 표상 모델 개발 및 감성 분석 성능 향상</p>
+                
+                <div class="project-highlight">
+                    <p><strong>기술적 기여:</strong></p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>자연어 개념 표상 모델인 <strong>UBERT(형태소 입력 기반 BERT)</strong>을 이용한 중요 감성 표현 영역 추출 모델 개발</li>
+                        <li>어휘의미망(UWordMap)의 명사와 동사의 상·하위어를 의미 자질로 활용하는 실험 설계 및 검증</li>
+                        <li>상·하위어 계층별 빈도 분석을 통한 데이터 기반 자질 선택 최적화</li>
+                        <li>임베딩 결합 방식 실험: Concatenation, Addition 등 다양한 결합 방법 비교 분석</li>
+                        <li>임베딩 레이어별 자질 결합 위치 최적화 (출력 직전 임베딩 결합이 최적 성능)</li>
+                    </ul>
+                </div>
+
+                <div class="project-metrics">
+                    <div class="metric-item">
+                        <div class="metric-value">+7.55%</div>
+                        <div class="metric-label">F1-Score 향상<br/>(Baseline 대비)</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value">40.99%</div>
+                        <div class="metric-label">최종 F1-Score<br/>(성능)</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value">UBERT</div>
+                        <div class="metric-label">형태소 입력<br/>기반 BERT</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value">UWordMap</div>
+                        <div class="metric-label">어휘의미망<br/>자질 활용</div>
+                    </div>
+                </div>
+
+                <p style="margin-top: 15px;"><strong>성과:</strong> 어휘의미망(UWordMap)의 명사와 동사 상·하위어를 자질로 활용하여 F1-Score 기준 <strong>baseline 대비 7.55% 포인트 향상한 40.99%</strong>의 성능을 달성했습니다. 다양한 임베딩 결합 방식(Concatenation, Addition)을 실험한 결과, <strong>Concatenation 방식</strong>이 최적 성능을 보였으며, 출력 직전 임베딩 레이어에 자질을 결합하는 것이 가장 효과적임을 검증했습니다. 상·하위어 계층별 빈도 분석을 통한 데이터 기반 자질 선택으로 모델 성능을 최적화했으며, 한국어 문법 및 의미론적 지식을 NLP 모델에 효과적으로 통합하는 방법론을 제시했습니다.</p>
+                
+                <span class="tag">BERT</span>
+                <span class="tag">Sentiment Analysis</span>
+                <span class="tag">Lexical Semantic Network</span>
+                <span class="tag">Feature Engineering</span>
+                <span class="tag">Embedding Fusion</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Education</h2>
+            <div class="education-item">
+                <h3>울산대학교 전기전자컴퓨터공학부 (인공지능 전공)</h3>
+                <div class="item-meta">석사 (2021.03 - 2023.02)</div>
+                <p>전공: 인공지능 | 연구 분야: 자연어처리, 감정분석</p>
+            </div>
+            <div class="education-item">
+                <h3>울산대학교 수학 및 IT융합 전공</h3>
+                <div class="item-meta">학사 (2017.03 - 2021.02)</div>
+                <p>수학과 IT 융합 전공으로 AI 기초 역량 구축</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🏆 주요 연구 프로젝트 참여</h2>
+            <div class="research-card">
+                <div class="card-title">사람처럼 개념적으로 이해/추론이 가능한 복합인공지능 원천기술 연구</div>
+                <div class="card-meta">한국전자통신연구원 (ETRI) | 2023.03 - 현재</div>
+                <p>복합 추론이 가능한 차세대 AI 시스템 개발을 위한 원천기술 연구에 참여하고 있습니다.</p>
+            </div>
+            <div class="research-card">
+                <div class="card-title">미래교실 속 증강된 교사의 역량 맞춤형 교육을 위한 AI 분석-생성-코칭 코파일럿 기술 개발</div>
+                <div class="card-meta">정보통신기획평가원 (IITP) | 2023.07 - 현재</div>
+                <p>교사 역량 강화를 위한 AI 기반 교육 보조 시스템 개발 프로젝트에 참여하고 있습니다.</p>
+            </div>
+            <div class="research-card">
+                <div class="card-title">휴먼 지식증강 서비스를 위한 지능진화형 WiseQA 플랫폼 기술 개발</div>
+                <div class="card-meta">정보통신기획평가원 (엑소브레인) | 2021.01 - 2023.02</div>
+                <p>질의응답 시스템의 지능 진화를 위한 플랫폼 기술 개발에 참여했습니다.</p>
+            </div>
+            <div class="research-card">
+                <div class="card-title">문맥 정보와 어휘의미망을 결합한 자연어 개념 표상 모델 개발</div>
+                <div class="card-meta">한국연구재단 (교육부) | 2021.03 - 2023.02 | 연구보조원 (참여도: 20%)</div>
+                <p>문맥 정보와 어휘 의미망을 결합한 자연어 개념 표상 모델 개발 연구에 참여했습니다. UBERT(형태소 입력 기반 BERT) 모델을 이용하여 중요 감성 표현 영역 추출 모델을 개발하고, 어휘의미망(UWordMap)의 명사와 동사의 상·하위어를 의미 자질로 활용하는 실험을 수행했습니다. 다양한 임베딩 결합 방식(Concatenation, Addition)을 실험하여 최적의 결합 방법을 도출했으며, F1-Score 기준 baseline 대비 <strong>7.55% 포인트 향상한 40.99%</strong>의 성능을 달성했습니다. 상·하위어 계층별 빈도 분석을 통한 데이터 기반 자질 선택으로 모델 성능을 최적화했으며, 한국어 문법 및 의미론적 지식을 NLP 모델에 효과적으로 통합하는 방법론을 제시했습니다.</p>
+            </div>
+            <div class="research-card">
+                <div class="card-title">다문화가정을 위한 한국어 어휘의미분석기반 다국어 어휘대역어 서비스 개발 및 활용</div>
+                <div class="card-meta">한국연구재단 (부산외국어대학교) | 2020.09 - 2021.08</div>
+                <p>다문화 가정 지원을 위한 다국어 어휘 서비스 개발 프로젝트에 참여했습니다.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
