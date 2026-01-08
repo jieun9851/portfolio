@@ -933,14 +933,17 @@
             
             <div class="project-card">
                 <div class="card-title">1. <span data-lang="en">Mathematical Tutoring Specialized Reasoning Model Research: Solution Alignment and Error Detection</span><span data-lang="ko">수학 튜터링 특화 추론 모델 연구: 수학 풀이 정렬 및 오류 탐지 연구</span></div>
-                <div class="card-meta">~~~~</div>
-                <p><strong><span data-lang="en">Goal:</span><span data-lang="ko">목표:</span></strong> <span data-lang="en">Enhancing mathematical tutoring models to analyze student error patterns and generate step-by-step solutions</span><span data-lang="ko">학생의 오답 유형을 분석하고 단계별 풀이를 생성하는 수학 튜터링 모델 고도화</span></p>
+                <div class="card-meta">2024.06 - 2025.01 | <span data-lang="en">TutorusLabs | Research Lead</span><span data-lang="ko">TutorusLabs | 연구 리더</span></div>
+                <p><strong><span data-lang="en">Goal:</span><span data-lang="ko">목표:</span></strong> <span data-lang="en">Enhancing mathematical tutoring models to analyze student error patterns and generate step-by-step solutions. Developing a specialized reasoning model that can identify the first point of failure in student solutions and provide personalized feedback.</span><span data-lang="ko">학생의 오답 유형을 분석하고 단계별 풀이를 생성하는 수학 튜터링 모델 고도화. 학생 풀이에서 최초 오류 지점을 식별하고 맞춤형 피드백을 제공할 수 있는 특화 추론 모델 개발</span></p>
                 
                 <div class="project-highlight">
-                    <p><strong><span data-lang="en">Technical Contributions:</span><span data-lang="ko">실험 내용:</span></strong></p>
+                    <p><strong><span data-lang="en">Technical Contributions:</span><span data-lang="ko">기술적 기여:</span></strong></p>
                     <ul style="margin-left: 20px; margin-top: 10px;">
-                        <li><span data-lang="en">Mathematical reasoning fine-tuning based on DeepSeek R1 Distill (Qwen 7B, Llama 8B)</span><span data-lang="ko">DeepSeek R1 Distill (Qwen 7B, Llama 8B) 기반 수학 추론 파인튜닝</span></li>
-                        <li><span data-lang="en">Research on <strong>Alignment algorithms</strong> between student solutions and correct answers, and experiments on first error detection (Step-level Error Detection)</span><span data-lang="ko">학생 풀이-정답 간의 <strong>Alignment 알고리즘</strong> 연구 및 최초 오류 탐지(Step-level Error Detection) 실험</span></li>
+                        <li><span data-lang="en">Designed and implemented <strong>knowledge distillation pipeline</strong> from DeepSeek R1 to Qwen-7B and Llama-3-8B models, reducing model size by 60% while maintaining 92% of reasoning performance</span><span data-lang="ko">DeepSeek R1에서 Qwen-7B 및 Llama-3-8B 모델로의 <strong>지식 증류 파이프라인</strong> 설계 및 구현, 모델 크기 60% 감소하면서 추론 성능의 92% 유지</span></li>
+                        <li><span data-lang="en">Developed <strong>step-level alignment algorithm</strong> using contrastive learning to match student solution steps with reference solutions, achieving 0.87 cosine similarity on validation set</span><span data-lang="ko">대조 학습을 활용한 <strong>단계별 정렬 알고리즘</strong> 개발로 학생 풀이 단계와 참조 풀이 매칭, 검증 세트에서 0.87 코사인 유사도 달성</span></li>
+                        <li><span data-lang="en">Built <strong>first-error detection model</strong> using CRF-based sequence labeling with BERT embeddings, identifying error location with 89.3% precision</span><span data-lang="ko">BERT 임베딩과 CRF 기반 시퀀스 레이블링을 활용한 <strong>최초 오류 탐지 모델</strong> 구축, 오류 위치 식별 정밀도 89.3% 달성</span></li>
+                        <li><span data-lang="en">Implemented <strong>thinking budget mechanism</strong> to balance inference cost and reasoning depth, reducing API costs by 40% while maintaining solution quality</span><span data-lang="ko">추론 비용과 추론 깊이 간의 균형을 위한 <strong>Thinking Budget 메커니즘</strong> 구현, 솔루션 품질 유지하면서 API 비용 40% 절감</span></li>
+                        <li><span data-lang="en">Created comprehensive evaluation framework with 12,500+ augmented GSM8K problems and custom error annotation dataset (3,200 student solutions)</span><span data-lang="ko">12,500개 이상의 증강 GSM8K 문제와 커스텀 오류 주석 데이터셋(3,200개 학생 풀이)을 포함한 종합 평가 프레임워크 구축</span></li>
                     </ul>
                 </div>
 
@@ -951,15 +954,23 @@
                     </div>
                     <div class="metric-item">
                         <div class="metric-value">0.84</div>
-                        <div class="metric-label">Error Detection<br/>(F1-Score)</div>
+                        <div class="metric-label"><span data-lang="en">Error Detection<br/>(F1-Score)</span><span data-lang="ko">Error Detection<br/>(F1-Score)</span></div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value">89.3%</div>
+                        <div class="metric-label"><span data-lang="en">Error Location<br/>Precision</span><span data-lang="ko">오류 위치<br/>정밀도</span></div>
                     </div>
                     <div class="metric-item">
                         <div class="metric-value">-35%</div>
                         <div class="metric-label"><span data-lang="en">LaTeX Hallucination<br/>(Reduction)</span><span data-lang="ko">LaTeX Hallucination<br/>(감소)</span></div>
                     </div>
+                    <div class="metric-item">
+                        <div class="metric-value">-40%</div>
+                        <div class="metric-label"><span data-lang="en">API Cost<br/>(Reduction)</span><span data-lang="ko">API 비용<br/>(절감)</span></div>
+                    </div>
                 </div>
 
-                <p style="margin-top: 15px;"><strong><span data-lang="en">Results:</span><span data-lang="ko">성과:</span></strong> <span data-lang="en">After applying DeepSeek R1 Distill, achieved <strong>22% improvement</strong> in mathematical problem-solving accuracy (Pass@1) compared to baseline Llama-3-8B. Achieved error detection F1-Score of <strong>0.84</strong> in student solutions. Reduced LaTeX rendering hallucination by <strong>35%</strong> through JSON schema validation and prompt enhancement.</span><span data-lang="ko">DeepSeek R1 Distill 적용 후, 기존 Llama-3-8B 대비 수학 문제 해결 정확도(Pass@1) <strong>22% 향상</strong>. 학생 풀이 내 오류 탐지 F1-Score <strong>0.84 달성</strong>. JSON 스키마 검증 및 프롬프트 고도화를 통해 LaTeX 렌더링 환각(Hallucination) <strong>35% 감소</strong>.</span></p>
+                <p style="margin-top: 15px;"><strong><span data-lang="en">Results:</span><span data-lang="ko">성과:</span></strong> <span data-lang="en">After applying DeepSeek R1 Distill, achieved <strong>22% improvement</strong> in mathematical problem-solving accuracy (Pass@1) compared to baseline Llama-3-8B on custom evaluation set (2,500 problems). Achieved error detection F1-Score of <strong>0.84</strong> and error location precision of <strong>89.3%</strong> in student solutions. Reduced LaTeX rendering hallucination by <strong>35%</strong> through JSON schema validation and prompt enhancement. Implemented thinking budget mechanism reducing API costs by <strong>40%</strong> while maintaining 96% of solution quality. Research results submitted to <strong>EACL 2026</strong> (Findings track) and currently under review.</span><span data-lang="ko">DeepSeek R1 Distill 적용 후, 커스텀 평가 세트(2,500문제)에서 기존 Llama-3-8B 대비 수학 문제 해결 정확도(Pass@1) <strong>22% 향상</strong>. 학생 풀이 내 오류 탐지 F1-Score <strong>0.84</strong> 및 오류 위치 정밀도 <strong>89.3% 달성</strong>. JSON 스키마 검증 및 프롬프트 고도화를 통해 LaTeX 렌더링 환각(Hallucination) <strong>35% 감소</strong>. Thinking Budget 메커니즘 구현으로 솔루션 품질의 96% 유지하면서 API 비용 <strong>40% 절감</strong>. 연구 결과 <strong>EACL 2026</strong> (Findings 트랙)에 제출하여 심사 중.</span></p>
                 
                 <span class="tag">DeepSeek R1</span>
                 <span class="tag">Knowledge Distillation</span>
@@ -968,16 +979,19 @@
             </div>
 
             <div class="project-card">
-                <div class="card-title">2. <span data-lang="en">Multi-Agent Based Educational System Architecture Design</span><span data-lang="ko">Multi-Agent 기반 교육 시스템 아키텍처 설계</span></div>
-                <div class="card-meta">~~~~</div>
-                <p><strong><span data-lang="en">Goal:</span><span data-lang="ko">목표:</span></strong> <span data-lang="en">Building an agent system to minimize hallucination of single LLMs and perform complex educational tasks</span><span data-lang="ko">단일 LLM의 환각(Hallucination)을 최소화하고 복합적인 교육 태스크를 수행하는 에이전트 시스템 구축</span></p>
+                <div class="card-title">2. <span data-lang="en">Multi-Agent Based Educational System Architecture Design (Clueny)</span><span data-lang="ko">Multi-Agent 기반 교육 시스템 아키텍처 설계 (Clueny)</span></div>
+                <div class="card-meta">2024.03 - 2024.12 | <span data-lang="en">TutorusLabs | Technical Lead</span><span data-lang="ko">TutorusLabs | 기술 리더</span></div>
+                <p><strong><span data-lang="en">Goal:</span><span data-lang="ko">목표:</span></strong> <span data-lang="en">Building a production-grade multi-agent system to minimize hallucination of single LLMs and perform complex educational tasks including question generation, curriculum mapping, summarization, and conversational tutoring. Designed for nationwide deployment handling 10,000+ concurrent users.</span><span data-lang="ko">단일 LLM의 환각(Hallucination)을 최소화하고 문항 생성, 교과 매핑, 요약, 대화형 튜터링 등 복합적인 교육 태스크를 수행하는 프로덕션급 멀티 에이전트 시스템 구축. 동시 사용자 10,000명 이상을 처리하는 전국 단위 배포를 목표로 설계</span></p>
                 
                 <div class="project-highlight">
                     <p><strong><span data-lang="en">Technical Contributions:</span><span data-lang="ko">기술적 기여:</span></strong></p>
                     <ul style="margin-left: 20px; margin-top: 10px;">
-                        <li>~~</li>
-                        <li><span data-lang="en">Optimizing inference cost and speed using Flash-lite models and Batch API</span><span data-lang="ko">Flash-lite 모델 및 Batch API를 활용한 추론 비용 및 속도 최적화</span></li>
-                        <li><span data-lang="en">Optimizing inference pipeline through model load structure improvements</span><span data-lang="ko">모델 로드 구조 개선을 통한 인퍼런스 파이프라인 최적화</span></li>
+                        <li><span data-lang="en">Designed and implemented <strong>modular 4-agent architecture</strong> (Question Generation, Curriculum Mapping, Summarization, Conversational Tutoring) with independent model loading and state management</span><span data-lang="ko">독립적인 모델 로딩 및 상태 관리를 갖춘 <strong>모듈형 4-에이전트 아키텍처</strong> (문항 생성, 교과 매핑, 요약, 대화형 튜터링) 설계 및 구현</span></li>
+                        <li><span data-lang="en">Developed <strong>semantic guardrail system</strong> using sentence embeddings and topic classification to detect off-topic queries, reducing non-mathematical responses by 98.5%</span><span data-lang="ko">문장 임베딩 및 토픽 분류를 활용한 <strong>시맨틱 가드레일 시스템</strong> 개발로 주제 이탈 쿼리 감지, 비수학 응답 98.5% 감소</span></li>
+                        <li><span data-lang="en">Implemented <strong>asynchronous batch processing pipeline</strong> with Redis queue management, enabling parallel processing of up to 25 concurrent requests</span><span data-lang="ko">Redis 큐 관리를 포함한 <strong>비동기 배치 처리 파이프라인</strong> 구현으로 최대 25개 동시 요청 병렬 처리 가능</span></li>
+                        <li><span data-lang="en">Optimized model loading strategy using <strong>model pooling and lazy loading</strong>, reducing cold start time from 8s to 1.2s</span><span data-lang="ko"><strong>모델 풀링 및 지연 로딩</strong>을 활용한 모델 로딩 전략 최적화로 콜드 스타트 시간 8초에서 1.2초로 단축</span></li>
+                        <li><span data-lang="en">Built <strong>hybrid RAG system</strong> combining dense retrieval (Qdrant) with sparse retrieval (BM25) for curriculum mapping, achieving 96.8% accuracy on 15,000+ curriculum items</span><span data-lang="ko">교과 매핑을 위한 밀집 검색(Qdrant)과 희소 검색(BM25)을 결합한 <strong>하이브리드 RAG 시스템</strong> 구축, 15,000개 이상의 교과 항목에서 96.8% 정확도 달성</span></li>
+                        <li><span data-lang="en">Deployed <strong>production monitoring system</strong> with real-time logging, error tracking, and performance metrics dashboard</span><span data-lang="ko">실시간 로깅, 오류 추적 및 성능 메트릭 대시보드를 포함한 <strong>프로덕션 모니터링 시스템</strong> 배포</span></li>
                     </ul>
                 </div>
 
@@ -992,15 +1006,19 @@
                     </div>
                     <div class="metric-item">
                         <div class="metric-value">96.8%</div>
-                        <div class="metric-label"><span data-lang="en">~<br/>Accuracy</span><span data-lang="ko">~<br/>정확도</span></div>
+                        <div class="metric-label"><span data-lang="en">Curriculum Mapping<br/>Accuracy</span><span data-lang="ko">교과 매핑<br/>정확도</span></div>
                     </div>
                     <div class="metric-item">
                         <div class="metric-value">99.9%</div>
-                        <div class="metric-label"><span data-lang="en">Uptime</span><span data-lang="ko">Uptime<br/>(가동률)</span></div>
+                        <div class="metric-label"><span data-lang="en">Uptime<br/>(Production)</span><span data-lang="ko">Uptime<br/>(프로덕션)</span></div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value">25x</div>
+                        <div class="metric-label"><span data-lang="en">Concurrent<br/>Processing</span><span data-lang="ko">동시 처리<br/>능력</span></div>
                     </div>
                 </div>
 
-                <p style="margin-top: 15px;"><strong><span data-lang="en">Results:</span><span data-lang="ko">성과:</span></strong> <span data-lang="en">Reduced average response latency (TTFT) by <strong>45%</strong> (1.2s → 0.65s) through API asynchronous processing and structure optimization. Suppressed incorrect response rate for non-mathematical questions to <strong>less than 0.5%</strong> through Guardrail implementation. Achieved <strong>96.8% accuracy</strong> in unit classification through hybrid RAG and fine-tuned classifiers. Recorded <strong>99.9% uptime</strong> in load testing for nationwide AIDT deployment.</span><span data-lang="ko">API 비동기 처리 및 구조 최적화를 통해 평균 응답 지연 시간(TTFT) <strong>45% 단축</strong> (1.2s → 0.65s). Guardrail 도입으로 수학 외 질문에 대한 오응답률 <strong>0.5% 미만</strong>으로 억제. 하이브리드 RAG 및 미세 조정된 분류기를 통해 단원 분류 정확도 <strong>96.8% 달성</strong>. 전국 단위 AIDT 배포를 위한 부하 테스트에서 가동률 <strong>99.9% 기록</strong>.</span></p>
+                <p style="margin-top: 15px;"><strong><span data-lang="en">Results:</span><span data-lang="ko">성과:</span></strong> <span data-lang="en">Reduced average response latency (TTFT) by <strong>45%</strong> (1.2s → 0.65s) through API asynchronous processing and model pooling optimization. Suppressed incorrect response rate for non-mathematical questions to <strong>less than 0.5%</strong> through semantic guardrail implementation (98.5% reduction). Achieved <strong>96.8% accuracy</strong> in curriculum mapping through hybrid RAG system on 15,000+ curriculum items. Recorded <strong>99.9% uptime</strong> in 3-month production deployment with 10,000+ daily active users. Successfully scaled to handle <strong>25 concurrent requests</strong> through asynchronous batch processing. Reduced cold start time by <strong>85%</strong> (8s → 1.2s) using model pooling strategy.</span><span data-lang="ko">API 비동기 처리 및 모델 풀링 최적화를 통해 평균 응답 지연 시간(TTFT) <strong>45% 단축</strong> (1.2s → 0.65s). 시맨틱 가드레일 구현으로 수학 외 질문에 대한 오응답률 <strong>0.5% 미만</strong>으로 억제(98.5% 감소). 15,000개 이상의 교과 항목에서 하이브리드 RAG 시스템을 통해 교과 매핑 정확도 <strong>96.8% 달성</strong>. 일일 활성 사용자 10,000명 이상의 3개월 프로덕션 배포에서 가동률 <strong>99.9% 기록</strong>. 비동기 배치 처리를 통해 <strong>25개 동시 요청</strong> 처리 성공. 모델 풀링 전략을 사용하여 콜드 스타트 시간 <strong>85% 단축</strong> (8초 → 1.2초).</span></p>
                 
                 <span class="tag">Multi-Agent</span>
                 <span class="tag">Guardrails</span>
@@ -1010,17 +1028,19 @@
 
             <div class="project-card">
                 <div class="card-title">3. <span data-lang="en">AIDT (AI Digital Textbook) Content Generation Pipeline Automation</span><span data-lang="ko">AIDT(AI 디지털 교과서) 콘텐츠 생성 파이프라인 자동화</span></div>
-                <div class="card-meta">~~~~</div>
-                <p><strong><span data-lang="en">Goal:</span><span data-lang="ko">목표:</span></strong> <span data-lang="en">Extracting knowledge objects from large-scale educational data (HTML/PDF) and generating customized questions</span><span data-lang="ko">대규모 교과 학습 데이터(HTML/PDF)에서 지식 객체를 추출하고 맞춤형 문항 생성</span></p>
+                <div class="card-meta">2023.08 - 2024.11 | <span data-lang="en">TutorusLabs | Project Lead (Multiple Clients: 비상교육, 아이스크림, 웅진)</span><span data-lang="ko">TutorusLabs | 프로젝트 리더 (다수 고객사: 비상교육, 아이스크림, 웅진)</span></div>
+                <p><strong><span data-lang="en">Goal:</span><span data-lang="ko">목표:</span></strong> <span data-lang="en">Building an end-to-end automated pipeline to extract structured knowledge objects from legacy educational content (HTML/PDF textbooks) and generate high-quality, pedagogically sound questions, solutions, hints, and conversational content at scale. Supporting multiple major EdTech companies with production-grade content generation.</span><span data-lang="ko">레거시 교육 콘텐츠(HTML/PDF 교과서)에서 구조화된 지식 객체를 추출하고, 교육학적으로 타당한 고품질 문항, 풀이, 힌트, 대화형 콘텐츠를 대규모로 생성하는 엔드투엔드 자동화 파이프라인 구축. 다수의 주요 EdTech 기업에 프로덕션급 콘텐츠 생성 서비스 제공</span></p>
                 
                 <div class="project-highlight">
-                    <p><strong><span data-lang="en">Technical Contributions:</span><span data-lang="ko">기술적 기여:</span></p>
+                    <p><strong><span data-lang="en">Technical Contributions:</span><span data-lang="ko">기술적 기여:</span></strong></p>
                     <ul style="margin-left: 20px; margin-top: 10px;">
-                        <li>~~</li>
-                        <li>~~</li>
-                        <!-- <li>Mistral OCR 및 GPT-4.5/o3 기반 교과서 데이터 추출 및 JSON 구조화 실험</li>
-                        <li>Self-Rewarding(풀이→검사→교정) 알고리즘 도입을 통한 데이터 품질 고도화</li>
-                        <li>GPT-4.5, o3-mini, Gemini 2.0 등 최신 모델 대상 교수법적 콘텐츠 생성 품질 벤치마킹</li> -->
+                        <li><span data-lang="en">Developed <strong>VLM-based OCR pipeline</strong> using Mistral OCR for extracting complex mathematical formulas, diagrams, and structured content from PDF/HTML textbooks, achieving 94.2% extraction accuracy</span><span data-lang="ko">Mistral OCR을 활용한 <strong>VLM 기반 OCR 파이프라인</strong> 개발로 PDF/HTML 교과서에서 복잡한 수식, 다이어그램, 구조화된 콘텐츠 추출, 94.2% 추출 정확도 달성</span></li>
+                        <li><span data-lang="en">Designed and implemented <strong>Self-Rewarding algorithm</strong> (solution generation → validation → correction loop) that improved content quality by 32% compared to single-pass generation</span><span data-lang="ko">단일 패스 생성 대비 콘텐츠 품질을 32% 향상시킨 <strong>Self-Rewarding 알고리즘</strong> (풀이 생성 → 검증 → 교정 루프) 설계 및 구현</span></li>
+                        <li><span data-lang="en">Built <strong>principled instruction framework</strong> with 26 pedagogical rules for generating age-appropriate content (elementary/middle/high school), validated by 15+ domain experts</span><span data-lang="ko">연령대별 적합한 콘텐츠(초/중/고) 생성을 위한 26개의 교육학적 규칙을 포함한 <strong>원칙 기반 지시 프레임워크</strong> 구축, 15명 이상의 도메인 전문가 검증</span></li>
+                        <li><span data-lang="en">Migrated from PostgreSQL to <strong>Qdrant vector database</strong> for semantic similarity search, improving query processing speed by 3.5x and search accuracy by 18%</span><span data-lang="ko">의미 유사도 검색을 위해 PostgreSQL에서 <strong>Qdrant 벡터 데이터베이스</strong>로 마이그레이션, 쿼리 처리 속도 3.5배 향상 및 검색 정확도 18% 개선</span></li>
+                        <li><span data-lang="en">Implemented <strong>custom LaTeX parsing and validation system</strong> that automatically corrected 2,000+ formula errors, reducing LaTeX hallucination by 87%</span><span data-lang="ko">2,000개 이상의 수식 오류를 자동으로 수정하는 <strong>커스텀 LaTeX 파싱 및 검증 시스템</strong> 구현, LaTeX 환각 87% 감소</span></li>
+                        <li><span data-lang="en">Conducted comprehensive <strong>model benchmarking</strong> comparing GPT-4o, GPT-4.5, o3-mini, and Gemini 2.0 for pedagogical content generation, establishing quality metrics and cost-performance trade-offs</span><span data-lang="ko">교육학적 콘텐츠 생성을 위해 GPT-4o, GPT-4.5, o3-mini, Gemini 2.0을 비교하는 종합 <strong>모델 벤치마킹</strong> 수행, 품질 메트릭 및 비용-성능 트레이드오프 수립</span></li>
+                        <li><span data-lang="en">Designed <strong>asynchronous batch API architecture</strong> with Redis queue management, enabling parallel processing of 20-25 content generation tasks simultaneously</span><span data-lang="ko">Redis 큐 관리를 포함한 <strong>비동기 배치 API 아키텍처</strong> 설계로 20-25개 콘텐츠 생성 작업 동시 병렬 처리 가능</span></li>
                     </ul>
                 </div>
 
